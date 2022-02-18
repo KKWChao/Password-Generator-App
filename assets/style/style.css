@@ -130,7 +130,7 @@ section h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 36px;
+  font-size: 24px;
   padding: 1em;
   flex-wrap: wrap;
 }
