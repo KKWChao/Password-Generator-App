@@ -30,33 +30,41 @@ function generator(seq_len) {
   // sequencer generator
   // builds the sequence of letters/numbers/characters 
   
-  // base case without any selection
-  if (numSelect.checked === false && 
-    uppSelect.checked === false && 
-    lowSelect.checked === false &&
-    specSelect.checked === false) {
-      
+  // case without any selection
+  if (numSelect.checked === false 
+    && uppSelect.checked === false 
+    && lowSelect.checked === false 
+    && specSelect.checked === false) {
       var sequence = [];
       window.alert("Please select an option for the password generator")
-    }
-    
-    /* NEED TO ADD UPPER/LOWER SELECTION */
+  }
+  
+  // case for specific upper or lower
   if (uppSelect.checked && lowSelect.checked === false) {
-      sequence = upper;
+    sequence = upper;
+  } else if (uppSelect.checked && lowSelect.checked) {
+    sequence = sequence.concat(upper);
   }
 
-  if (uppSelect.checked) {
-    sequence = sequence.concat(upper);
-}
-
-  // if statements for selection
-  if (numSelect.checked) {
+  // case for only numeric
+  if (numSelect.checked 
+    && uppSelect.checked === false 
+    && lowSelect.checked === false 
+    && specSelect.checked === false) {
+    sequence = numer;
+  } else if (numSelect.checked) {
     sequence = sequence.concat(numer);
   }
 
-  if (specSelect.checked) {
-    sequence = sequence.concat(special);
-  }
+  // case for only special
+  if (specSelect.checked 
+    && numSelect.checked === false 
+    && uppSelect.checked === false 
+    && lowSelect.checked === false ) {
+      sequence = special;
+    } else if (specSelect.checked) {
+      sequence = sequence.concat(special);
+    }
 
   // randomization loop
   // creates random numbers for sequence selection
@@ -68,7 +76,7 @@ function generator(seq_len) {
 
   // call setPass function
   setPass(password.join(''))
-  /* console.log(sequence) */
+  console.log(sequence)
 }
 
 
