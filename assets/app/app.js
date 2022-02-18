@@ -2,7 +2,7 @@
 var numSelect = document.getElementById("numberChar");
 var uppSelect = document.getElementById("upperChar");
 var lowSelect = document.getElementById("lowerChar");
-var specChar = document.getElementById("specialChar");
+var specSelect = document.getElementById("specialChar");
 var lenSlide = document.getElementById("passLength");
 var lengthID_p = document.getElementById("lengthID");
 var password_p = document.getElementById("password");
@@ -11,7 +11,8 @@ var submitter = document.getElementById("passGen");
 
 // charcode for alpha values (uppercase)
 const alpha = Array.from(Array(26)).map((e, i) => i + 65);
-const alphabet = alpha.map((x) => String.fromCharCode(x));
+const upper = alpha.map((x) => String.fromCharCode(x));
+const lower = upper.join('').toLowerCase().split('')
 const numer = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const special = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 
@@ -20,70 +21,48 @@ function setPass(password) {
   password_p.innerHTML = password;
 }
 
+// creates random number selector for characters 
+// (sequence_len = total number of array items, len = length of password)
+function generator(seq_len) {
+  var keygener = [];
 
-
-// sequencer generator
-// builds the sequence of letters/numbers/characters 
-function sequencer() {
-  var sequence = alphabet;
-
+  // sequencer generator
+  // builds the sequence of letters/numbers/characters 
+  var sequence = lower;
+  
   // if statements for selection
   if (numSelect.checked) {
     sequence = sequence.concat(numer);
   }
 
-  if (specChar.checked) {
-    sequence = sequence.concat(special)
+  if (specSelect.checked) {
+    sequence = sequence.concat(special);
   }
-  console.log(sequence)
-  return sequence
-}
 
-
-
-
-// creates random number selector for characters 
-// (sequence_len = total number of array items, len = length of password)
-function generator(seq_len, len) {
-  var keygener = [];
-  sequencer()
+  /* NEED TO ADD UPPER/LOWER SELECTION */
+  if (uppSelect.checked) {
+    sequence = sequence.concat(upper);
+  }
 
   // randomization loop
   // creates random numbers for sequence selection
-  for (let i = 0; i<len; i++) {
-    keygener.push(Math.floor(Math.random() * seq_len))
+  for (let i = 0; i<lenSlide.value; i++) {
+    keygener.push(
+      sequence[Math.floor(Math.random() * sequence.length)]
+      )
   }
 
   // call setPass function
-  setPass(keygener)
+  setPass(keygener.join(''))
   /* console.log(sequence) */
 }
 
 
-
-
 // main function
 let main = function () {
-  sequencer();
+  generator();
 }
-main()
 
 submitter.addEventListener("click", () => {
-  var sequence = alphabet;
   main()
 })
-
-/* // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); */
