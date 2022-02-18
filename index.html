@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1><a href="#welcome">KC</a></h1>
+    <nav id="menu">
+      <ul>
+        <li><a href="">Github</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Password Generator Section -->
+  <section id="mainApp">
+    <h1>Password Generator</h1>
+
+    <div class="selectors">
+      <label for="numberChar">Numbers</label>
+      <input type="checkbox" name="numberChar" id="numberChar">
+
+      <label for="upperChar">Upper Case</label>
+      <input type="checkbox" name="upperChar" id="upperChar">
+
+      <label for="lowerChar">Lower Case</label>
+      <input type="checkbox" name="lowerChar" id="lowerChar">
+
+      <label for="specialChar">Special Characters</label>
+      <input type="checkbox" name="specialChar" id="specialChar">
+    </div>
+
+    <div class="selectors">
+      <label for="passLength">Length</label>
+      <input type="range" name="passLength" id="passLength">
+      <p id="lengthID"> </p>
+    </div>
+
+    <div class="selectors" id="output">
+      <p id="password"></p>
+    </div>
+
+    <div class="selectors" id="passGen">
+      <button type="submit">Generate</button>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>LOREM</h3>
+    <p>"Disclaimer"</p>
+  </footer>
+
+  <script src="./assets/app/app.js"></script>
+</body>
+<!-- Footer Section -->
+
+</html>

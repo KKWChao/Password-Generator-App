@@ -1,0 +1,163 @@
+:root {
+  --primary-color: #353535;
+  --secondary-color: #3C6E71;
+  --tertiary-color: #D9D9D9;
+  --text-color: #FFFFFF;
+  --back-color: #284B63;
+}
+
+* {
+  font-family:'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* HEADER STYLE START */
+
+header {
+  height: 100px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+header h1 {
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 0.1em;
+  margin-left: 1em;
+  transition: all 1s ease-in-out;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: var(--tertiary-color)
+}
+
+/* NAV STYLE START */
+
+header nav ul li {
+  margin-right: 2em;
+  display: inline;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+#menu ul li a {
+  color: var(--text-color);
+  padding: 1em;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 100px var(--primary-color) inset;
+}
+
+/* HEADER ANIMATION START */
+
+
+header h1:hover {
+  background-color: var(--back-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  rotate: 720deg;
+  box-shadow: 0 0 30px var(--primary-color) inset;
+}
+
+#menu ul li a:hover {
+  padding: 1em;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--primary-color) inset;
+}
+
+/* BODY STYLE START */
+
+body {
+  display: flex;
+  flex: 1;
+  
+  width: 100%;
+  flex-flow: column;
+}
+
+/* PASSWORD GENERATOR STYLING START */
+
+#mainApp {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+section h1 {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.selectors {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.selectors label {
+  padding-left: 1.5em;
+  padding-right: 0.5em;
+}
+
+#output p {
+  margin: 2em;
+  border: 2px solid black;
+  min-width: 400px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  padding: 1em;
+  flex-wrap: wrap;
+}
+
+#passGen button {
+  padding: 1em;
+  background: var(--secondary-color);
+  color: var(--tertiary-color);
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#passGen button::after {
+  background: var(--back-color);
+}
+
+/* FOOTER STYLE START */
+
+footer {
+  height: 50px;
+  width: 100%;
+  background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+  color: var(--text-color);
+  bottom: 0;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
