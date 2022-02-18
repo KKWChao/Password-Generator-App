@@ -125,7 +125,7 @@ section h1 {
   margin: 2em;
   border: 2px solid black;
   min-width: 400px;
-  height: 100px;
+  height: 200px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -133,6 +133,7 @@ section h1 {
   font-size: 24px;
   padding: 1em;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 #passGen button {
