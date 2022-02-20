@@ -15,14 +15,13 @@ link: https://kkwchao.github.io/Password-Generator-App/
 
 ##### HMTL
 [x] Create framework in HTML <br />
-[_] Fix footer <br />
-[_] Reset function <br />
-[_] Link Functions <br />
-[_] Clean up looks <br />
+[X] Fix footer <br />
+[X] Link Functions <br />
+
 
 ##### CSS
 [x] Basic CSS <br />
-[_] Clean up looks <br />
+
 
 ##### JS
 [X] Create Javscript code for basic app function <br />
@@ -30,11 +29,10 @@ link: https://kkwchao.github.io/Password-Generator-App/
 [X] Added Upper/Lower selection <br />
 [X] Added Special selection <br />
 [X] Added Numeric selection <br />
-[_] Slider Functionality with counter <br />
-[_] Streamline Code <br />
-[_] Add base case in case of no selection <br />
+[X] Slider Functionality with counter <br />
+[X] Streamline Code <br />
+[X] Add base case in case of no selection <br />
 
 
 ##### Completion
-[_] Finalize <br />
-[_] Complete <br />
+[X] Complete <br />

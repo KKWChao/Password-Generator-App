@@ -91,5 +91,3 @@ let main = function () {
 submitter.addEventListener("click", () => {
   main()
 })
-
-lenSlide.addEventListener("change", setPassLength())

@@ -153,6 +153,15 @@ section h1 {
 #passGen button::after {
   background: var(--back-color);
 }
+/* CHECKBOX STYLE START */
+
+.checkeds {
+  background: #3C6E71;
+}
+
+.checkeds:checked {
+  background: var(--secondary-color);
+}
 
 /* FOOTER STYLE START */
 
