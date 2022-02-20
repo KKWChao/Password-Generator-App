@@ -8,7 +8,6 @@ var lengthID_p = document.getElementById("lengthID");
 var password_p = document.getElementById("password");
 var submitter = document.getElementById("passGen");
 
-
 // charcode for alpha values (uppercase)
 const alpha = Array.from(Array(26)).map((e, i) => i + 65);
 const upper = alpha.map((x) => String.fromCharCode(x));
@@ -19,6 +18,10 @@ const special = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',
 // Setting password in HTML
 function setPass(text) {
   password_p.innerHTML = text;
+}
+
+function setPassLength() {
+  lengthID_p.innerHTML = lenSlide.value;
 }
 
 // creates random number selector for characters 
@@ -40,7 +43,8 @@ function generator(seq_len) {
   }
   
   // case for specific upper or lower
-  if (uppSelect.checked && lowSelect.checked === false) {
+  if (uppSelect.checked 
+    && lowSelect.checked === false) {
     sequence = upper;
   } else if (uppSelect.checked && lowSelect.checked) {
     sequence = sequence.concat(upper);
@@ -76,7 +80,6 @@ function generator(seq_len) {
 
   // call setPass function
   setPass(password.join(''))
-  console.log(sequence)
 }
 
 
@@ -88,3 +91,5 @@ let main = function () {
 submitter.addEventListener("click", () => {
   main()
 })
+
+lenSlide.addEventListener("change", setPassLength())

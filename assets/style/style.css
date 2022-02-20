@@ -121,6 +121,11 @@ section h1 {
   padding-right: 0.5em;
 }
 
+#lengthID {
+  padding-left: 1em;
+  font-size: large;
+}
+
 #output p {
   margin: 2em;
   border: 2px solid black;
